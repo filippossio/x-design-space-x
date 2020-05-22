@@ -1,42 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import LaunchesList from './LaunchesList';
+import { getLaunches } from '../services/SpaceXApi';
+import { refactorLaunchesToArray } from '../utils/RefactorLaunches';
+
 
 const Launches = () => {
+	const [launches, setLaunches] = useState(null);
+	const [isLoading, setIsLoading] = useState(true);
+	const [error, setError] = useState(false);
 
-	const [launches] = useState([
-		{
-			name: 'FalconSat',
-			date: '24th Mar 2006',
-			rocket: 'Falcon 1'
-		},
-		{
-			name: 'FalconSat',
-			date: '24th Mar 2006',
-			rocket: 'Falcon 1'
-		},
-		{
-			name: 'FalconSat',
-			date: '24th Mar 2006',
-			rocket: 'Falcon 1'
-		},
-		{
-			name: 'FalconSat',
-			date: '24th Mar 2006',
-			rocket: 'Falcon 1'
-		},
-		{
-			name: 'FalconSat',
-			date: '24th Mar 2006',
-			rocket: 'Falcon 1'
-		},
-		{
-			name: 'FalconSat',
-			date: '24th Mar 2006',
-			rocket: 'Falcon 1'
-		}
-	]);
+	useEffect(() => {
+		getLaunches().then((res) => {
+			setLaunches(refactorLaunchesToArray(res), setIsLoading(false));
+		}).catch(() => {
+			setError(true);
+			setIsLoading(false);
+		});
+	}, []);
+
+
 
 	return (
 		<>
@@ -51,7 +35,7 @@ const Launches = () => {
 					Sort Descending</Button>
 			</Box>
 			<Box>
-				<LaunchesList launches={launches} />
+				<LaunchesList launches={launches} loading={isLoading} error={error} />
 			</Box>
 		</>
 	);
