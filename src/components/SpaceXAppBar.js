@@ -11,6 +11,7 @@ import spaceXlogo from '../assets/spacex-logo.png';
 const useStyles = makeStyles((theme) => ({
 	root: {
 		flexGrow: 1,
+		marginBottom: '32px',
 	},
 	logo: {
 		height: '30px',
