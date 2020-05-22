@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import LaunchItem from './LaunchItem';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { StateContext } from '../providers/StateProvider';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -17,9 +17,11 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const LaunchesList = ({ launches, loading, error }) => {
+const LaunchesList = () => {
 	const classes = useStyles();
-	if (loading || !launches) {
+	const { launches, isLoading, error } = useContext(StateContext);
+
+	if (isLoading || !launches) {
 		return (
 			<div className={classes.root}>
 				<div className={classes.wrapper}>
@@ -28,7 +30,7 @@ const LaunchesList = ({ launches, loading, error }) => {
 			</div>
 		);
 	}
-	else if (!loading && error) {
+	else if (!isLoading && error) {
 		return (
 			<h1>Opps something went wrong</h1>
 		);
@@ -44,9 +46,3 @@ const LaunchesList = ({ launches, loading, error }) => {
 };
 
 export default LaunchesList;
-
-LaunchesList.propTypes = {
-	launches: PropTypes.array,
-	loading: PropTypes.bool,
-	error: PropTypes.bool,
-};

@@ -8,7 +8,10 @@ import { getCorrectDateFormat } from '../utils/RefactorDate';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
-		marginBottom: theme.spacing(2),
+		marginTop: theme.spacing(1),
+		marginBottom: theme.spacing(1),
+		marginLeft: theme.spacing(3),
+		marginRight: theme.spacing(3),
 	},
 	box: {
 		flexGrow: 1,
@@ -27,12 +30,12 @@ const LaunchItem = ({ data }) => {
 	return (
 		<>
 			<Paper className={classes.paper}>
-				<Box py={2} mx={3} display="flex" className={classes.box}>
+				<Box pt={2} mx={3} display="flex" className={classes.box}>
 					<Typography variant="h4">#{data.id}</Typography>
-					<Typography variant="h5">{data.mission_name}</Typography>
+					<Typography variant="h5" align="left">{data.mission_name}</Typography>
 					<Box>
-						<Typography variant="subtitle1">{data.date}</Typography>
-						<Typography variant="subtitle1">{data.rocket_name}</Typography>
+						<Typography variant="subtitle1" align="right">{data.date}</Typography>
+						<Typography variant="h6" align="right">{data.rocket_name}</Typography>
 					</Box>
 				</Box>
 			</Paper>

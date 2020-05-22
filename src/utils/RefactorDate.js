@@ -7,14 +7,14 @@ function getCorrectDateFormat(dt) {
 
 	if (d > 3 && d < 21) ordinal = 'th';
 	switch (d % 10) {
-		case 1: ordinal = 'st';
-			break;
-		case 2: ordinal = 'nd';
-			break;
-		case 3: ordinal = 'rd';
-			break;
-		default: ordinal = 'th';
-			break;
+	case 1: ordinal = 'st';
+		break;
+	case 2: ordinal = 'nd';
+		break;
+	case 3: ordinal = 'rd';
+		break;
+	default: ordinal = 'th';
+		break;
 	}
 	let month = date.toLocaleString('default', { month: 'short' });
 

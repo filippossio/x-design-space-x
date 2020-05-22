@@ -1,13 +1,16 @@
 import React from 'react';
-import SpaceXAppBar from '../components/SpaceXAppBar';
 import MainContainer from '../components/MainContainer';
+import SpaceXAppBar from '../components/SpaceXAppBar';
+import { StateProvider } from '../providers/StateProvider';
 
 const Application = () => {
 
 	return (
 		<>
-			<SpaceXAppBar />
-			<MainContainer />
+			<StateProvider>
+				<SpaceXAppBar />
+				<MainContainer />
+			</StateProvider>
 		</>
 	);
 };

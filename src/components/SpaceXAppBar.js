@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { StateContext } from '../providers/StateProvider';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -36,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
 const SpaceXAppBar = () => {
 	const classes = useStyles();
 
+	const { callGetLaunches } = useContext(StateContext);
+
+
 	return (
 		<>
 			<div className={classes.root}>
@@ -54,6 +58,7 @@ const SpaceXAppBar = () => {
 							color="primary"
 							variant="contained"
 							endIcon={<RefreshIcon />}
+							onClick={callGetLaunches}
 						>
 							<Hidden xsDown>Reload Data</Hidden></Button>
 					</Toolbar>
