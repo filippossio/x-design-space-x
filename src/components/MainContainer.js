@@ -12,7 +12,7 @@ const MainContainer = () => {
 						<img style={{ width: '100%' }}
 							src="/images/launch-home.png"
 							srcSet="/images/launch-home@2x.png 2x, /images/launch-home@3x.png 3x"
-							alt="Launch image" />
+							alt="Rocket launching" />
 					</Grid>
 				</Hidden>
 				<Grid item xs md={7}>
