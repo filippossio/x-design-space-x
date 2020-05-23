@@ -12,6 +12,11 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
 const useStyles = makeStyles((theme) => ({
+	box: {
+		[theme.breakpoints.down('sm')]: {
+			flexFlow: 'column'
+		}
+	},
 	button: {
 		margin: theme.spacing(1),
 		minWidth: 180,
@@ -44,7 +49,7 @@ const Launches = () => {
 
 	return (
 		<>
-			<Box display="flex" justifyContent="flex-end" px={3}>
+			<Box display="flex" justifyContent="flex-end" px={3} className={classes.box}>
 				<FormControl variant="filled" className={classes.button}>
 					<InputLabel id="select-by-year-label">Filter by Year</InputLabel>
 					<Select
