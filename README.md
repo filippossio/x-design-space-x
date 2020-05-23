@@ -24,11 +24,11 @@ Considerations we will be looking for in your submission are:
 - Code quality
 - Network logic
 
-## Available Scripts
+## To start the project
 
-In the project directory, you can run:
+### 1. `npm install`
 
-### `npm start`
+### 2. `npm start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
