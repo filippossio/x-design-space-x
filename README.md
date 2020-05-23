@@ -24,6 +24,10 @@ Considerations we will be looking for in your submission are:
 - Code quality
 - Network logic
 
+## To view the project
+
+[https://x-design-space-x.web.app/]
+
 ## To start the project
 
 ### 1. `npm install`
