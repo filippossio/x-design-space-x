@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import { getCorrectDateFormat } from '../utils/RefactorDate';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -22,11 +21,6 @@ const useStyles = makeStyles((theme) => ({
 const LaunchItem = ({ data }) => {
 	const classes = useStyles();
 
-	data = {
-		...data,
-		date: getCorrectDateFormat(data.date),
-	};
-
 	return (
 		<>
 			<Paper className={classes.paper}>
@@ -34,7 +28,7 @@ const LaunchItem = ({ data }) => {
 					<Typography variant="h4">#{data.id}</Typography>
 					<Typography variant="h5" align="left">{data.mission_name}</Typography>
 					<Box>
-						<Typography variant="subtitle1" align="right">{data.date}</Typography>
+						<Typography variant="subtitle1" align="right">{data.date_formatted}</Typography>
 						<Typography variant="h6" align="right">{data.rocket_name}</Typography>
 					</Box>
 				</Box>

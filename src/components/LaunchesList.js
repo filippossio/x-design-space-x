@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import LaunchItem from './LaunchItem';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { StateContext } from '../providers/StateProvider';
+import { sortByDate } from '../utils/SortData';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -17,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const LaunchesList = () => {
+const LaunchesList = ({ year }) => {
 	const classes = useStyles();
 	const { launches, isLoading, error } = useContext(StateContext);
 
@@ -36,12 +37,26 @@ const LaunchesList = () => {
 		);
 	}
 	else if (launches) {
-		return launches.map((launch, index) => {
-			return (
-				<LaunchItem
-					key={index}
-					data={launch} />);
-		});
+		if (year === '') {
+			return launches.map((launch, index) => {
+				return (
+					<LaunchItem
+						key={index}
+						data={launch} />
+				);
+			});
+		}
+		else {
+			return launches.filter((launch) => {
+				return launch.date_year === year;
+			}).map((launch, index) => {
+				return (
+					<LaunchItem
+						key={index}
+						data={launch} />
+				);
+			});
+		}
 	}
 };
 
