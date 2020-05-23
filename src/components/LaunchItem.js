@@ -15,6 +15,33 @@ const useStyles = makeStyles((theme) => ({
 	box: {
 		flexGrow: 1,
 		justifyContent: 'space-between',
+		[theme.breakpoints.down('sm')]: {
+			paddingTop: theme.spacing(1),
+			paddingBottom: theme.spacing(1),
+			flexFlow: 'row'
+		}
+	},
+	h4: {
+		marginRight: theme.spacing(1),
+		[theme.breakpoints.down('sm')]: {
+			fontSize: '2rem',
+		}
+	},
+	h5: {
+		textAlign: 'center',
+		[theme.breakpoints.down('sm')]: {
+			fontSize: '1.2rem',
+		}
+	},
+	h6: {
+		[theme.breakpoints.down('sm')]: {
+			fontSize: '1rem',
+		}
+	},
+	subtitle1: {
+		[theme.breakpoints.down('sm')]: {
+			fontSize: '1rem',
+		}
 	}
 }));
 
@@ -25,11 +52,11 @@ const LaunchItem = ({ data }) => {
 		<>
 			<Paper className={classes.paper}>
 				<Box pt={2} mx={3} display="flex" className={classes.box}>
-					<Typography variant="h4">#{data.id}</Typography>
-					<Typography variant="h5" align="left">{data.mission_name}</Typography>
+					<Typography variant="h4" className={classes.h4}>#{data.id}</Typography>
+					<Typography variant="h5" align="left" className={classes.h5}>{data.mission_name}</Typography>
 					<Box>
-						<Typography variant="subtitle1" align="right">{data.date_formatted}</Typography>
-						<Typography variant="h6" align="right">{data.rocket_name}</Typography>
+						<Typography variant="subtitle1" align="right" className={classes.subtitle1}>{data.date_formatted}</Typography>
+						<Typography variant="h6" align="right" className={classes.h6}>{data.rocket_name}</Typography>
 					</Box>
 				</Box>
 			</Paper>

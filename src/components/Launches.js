@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
 	button: {
 		margin: theme.spacing(1),
 		minWidth: 180,
+		[theme.breakpoints.down('sm')]: {
+			height: '56px',
+		}
 	},
 	selectEmpty: {
 		marginTop: theme.spacing(2),

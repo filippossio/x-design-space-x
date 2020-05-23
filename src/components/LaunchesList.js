@@ -1,9 +1,8 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import LaunchItem from './LaunchItem';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { StateContext } from '../providers/StateProvider';
-import { sortByDate } from '../utils/SortData';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
