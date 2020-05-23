@@ -21,6 +21,7 @@ export const StateProvider = ({ children }) => {
 	const callGetLaunches = () => {
 		setIsLoading(true);
 		getLaunches().then((res) => {
+			window.res = res;
 			let array = refactorLaunchesToArray(res);
 			setLaunches(array, setIsLoading(false));
 			setYears(getYear(array));

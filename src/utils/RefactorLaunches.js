@@ -1,7 +1,9 @@
 import { getCorrectDateFormat, getDateYear } from '../utils/RefactorDate';
 
-
 function refactorLaunchesToArray(result) {
+	if (!result || !Array.isArray(result.data)) {
+		return [];
+	}
 	return result.data.map((item) => {
 		return {
 			id: item.flight_number,
