@@ -1,33 +1,46 @@
 function getCorrectDateFormat(dt) {
-	var utcSeconds = dt;
-	var date = new Date(0); // The 0 there is the key, which sets the date to the epoch
-	date.setUTCSeconds(utcSeconds);
-	let d = date.getDate();
-	let ordinal = '';
-	if (d > 3 && d < 21) ordinal = 'th';
-	switch (d % 10) {
-		case 1: ordinal = 'st';
-			break;
-		case 2: ordinal = 'nd';
-			break;
-		case 3: ordinal = 'rd';
-			break;
-		default: ordinal = 'th';
-			break;
+	if (!dt) {
+		return 'Date was not defined';
 	}
-	let month = date.toLocaleString('default', { month: 'short' });
+	var utcSeconds = dt;
+	var date = new Date(0);
+	date.setUTCSeconds(utcSeconds);
+	if (!(date instanceof Date && !isNaN(date))) {
+		return 'Date was not defined';
+	}
+	let d = date.getDate();
+	let ordinal = getOrdinal(d);
 
+	let month = date.toLocaleString('default', { month: 'short' });
 
 	return `${d}${ordinal} ${month} ${date.getFullYear()}`;
 }
 
-function getDateYear(dt) {
-	var utcSeconds = dt;
-	var date = new Date(0);
-	date.setUTCSeconds(utcSeconds);
-	return date.getFullYear();
+function getOrdinal(d) {
+	if (!d) {
+		return;
+	}
+	if (d > 3 && d < 21) return 'th';
+	switch (d % 10) {
+		case 1: return 'st';
+		case 2: return 'nd';
+		case 3: return 'rd';
+		default: return 'th';
+	}
 }
 
+function getDateYear(dt) {
+	if (!dt) {
+		return 'Date was not defined';
+	}
+	var date = new Date(0);
+	var utcSeconds = dt;
+	date.setUTCSeconds(utcSeconds);
+	if (date instanceof Date && !isNaN(date)) {
+		return date.getFullYear();
+	} else {
+		return 'Date was not defined';
+	}
+}
 
-export { getCorrectDateFormat, getDateYear };
-
+export { getCorrectDateFormat, getDateYear, getOrdinal };
