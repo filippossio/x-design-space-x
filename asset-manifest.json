@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/filippossio/x-design-space-x/static/css/main.ae705a6e.chunk.css",
+    "main.js": "/filippossio/x-design-space-x/static/js/main.066f3a30.chunk.js",
+    "main.js.map": "/filippossio/x-design-space-x/static/js/main.066f3a30.chunk.js.map",
+    "runtime-main.js": "/filippossio/x-design-space-x/static/js/runtime-main.68497b32.js",
+    "runtime-main.js.map": "/filippossio/x-design-space-x/static/js/runtime-main.68497b32.js.map",
+    "static/js/2.428a6416.chunk.js": "/filippossio/x-design-space-x/static/js/2.428a6416.chunk.js",
+    "static/js/2.428a6416.chunk.js.map": "/filippossio/x-design-space-x/static/js/2.428a6416.chunk.js.map",
+    "index.html": "/filippossio/x-design-space-x/index.html",
+    "precache-manifest.3cd6a72ac02bc69fc88143fc90503258.js": "/filippossio/x-design-space-x/precache-manifest.3cd6a72ac02bc69fc88143fc90503258.js",
+    "service-worker.js": "/filippossio/x-design-space-x/service-worker.js",
+    "static/css/main.ae705a6e.chunk.css.map": "/filippossio/x-design-space-x/static/css/main.ae705a6e.chunk.css.map",
+    "static/js/2.428a6416.chunk.js.LICENSE.txt": "/filippossio/x-design-space-x/static/js/2.428a6416.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/filippossio/x-design-space-x/static/media/BrandonGrotesque-RegularItalic.ba6abfdd.ttf",
+    "static/media/spacex-logo.png": "/filippossio/x-design-space-x/static/media/spacex-logo.950ba665.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.68497b32.js",
+    "static/js/2.428a6416.chunk.js",
+    "static/css/main.ae705a6e.chunk.css",
+    "static/js/main.066f3a30.chunk.js"
+  ]
+}
